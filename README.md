@@ -1,5 +1,5 @@
 # python-dev-assesment
-This repository contains implementation web app using FastApli and SQLite
+This repository contains implementation web app using FastAPI and SQLite
 
 Snapshots of working of web app are given below : <b>
 <br>
