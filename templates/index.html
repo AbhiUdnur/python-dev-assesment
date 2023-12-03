@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Upload and Data Visualization</title>
+    
+    <!-- applying css for our form used for uploading csv file -->
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Make the body take the full height of the viewport */
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #337ab7;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #286090;
+        }
+
+         /* Popup Styling  */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+
+<!-- main code snippet of a form -->
+
+</head>
+<body>
+    <h1>CSV Upload and Data Visualization</h1>
+
+    <h2>Upload CSV File</h2>
+    <form method="post" action="/upload_csv" enctype="multipart/form-data" onsubmit="showPopup()">
+        <input type="file" name="csv_file">
+        <button type="submit">Upload</button>
+    </form>
+
+    <h2>Visualize CSV Data</h2>
+    <a href="/visualize_data">Visualize Data</a>
+
+    <!-- Popup HTML -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <p>File uploaded successfully!</p>
+        <button onclick="hidePopup()">Close</button>
+    </div>
+
+    <!-- JavaScript for Popup -->
+    <script>
+        function showPopup() {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("popup").style.display = "block";
+            return true;  // Continue with form submission
+        }
+
+        function hidePopup() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+</body>
+</html>
