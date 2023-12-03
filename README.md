@@ -1,6 +1,9 @@
 # python-dev-assesment
 This repository contains implementation web app using FastAPI and SQLite
 
+This app is used for uploading csv file and adding that data into SQLite database.<br>
+This data is then visualized using basic jinja2 templates.
+
 Snapshots of working of web app are given below : <b>
 <br>
 Basic form for uploading csv files:
