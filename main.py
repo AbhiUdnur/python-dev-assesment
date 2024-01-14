@@ -56,5 +56,3 @@ async def visualize_data(request: Request):
     results = cursor.fetchall()
     # print(results)
     return templates.TemplateResponse("visualize_data.html", {"request": request,"results": results})
-
-
